@@ -1,0 +1,550 @@
+/* ============================================
+   INFORME: CONFERENCIA SARA VILORIA - COLORES
+   Estilos personalizados + Bootstrap override
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* === VARIABLES CSS === */
+:root {
+  --color-primario: #2C1654;
+  --color-acento: #E8612A;
+  --color-dorado: #C9A84C;
+  --color-claro: #FDF6EC;
+  --color-gris: #6B6B6B;
+  --color-texto: #1A1A2E;
+  --fuente-titulo: 'Playfair Display', serif;
+  --fuente-cuerpo: 'DM Sans', sans-serif;
+  --sombra: 0 4px 24px rgba(44, 22, 84, 0.12);
+  --radio: 12px;
+}
+
+/* === RESET Y BASE === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-claro);
+  color: var(--color-texto);
+  line-height: 1.7;
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulo);
+}
+
+p {
+  font-family: var(--fuente-cuerpo);
+  font-weight: 300;
+}
+
+/* === HERO / PORTADA === */
+.hero {
+  background: linear-gradient(135deg, var(--color-primario) 0%, #5B2C8D 50%, #E8612A 100%);
+  color: white;
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.15);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--color-dorado);
+}
+
+.hero .subtitulo {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 520px;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-meta i {
+  color: var(--color-dorado);
+}
+
+/* === LÍNEA DECORATIVA === */
+.linea-decorativa {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-acento), var(--color-dorado));
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+/* === SECCIONES GENERALES === */
+.seccion {
+  padding: 80px 0;
+}
+
+.seccion-alt {
+  background-color: #f4edf7;
+}
+
+.seccion-oscura {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.seccion-titulo {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-primario);
+}
+
+.seccion-oscura .seccion-titulo {
+  color: var(--color-dorado);
+}
+
+.seccion-subtitulo {
+  color: var(--color-gris);
+  font-size: 1rem;
+  max-width: 580px;
+  margin-bottom: 48px;
+}
+
+.seccion-oscura .seccion-subtitulo {
+  color: rgba(255,255,255,0.7);
+}
+
+/* === CARD PONENTE === */
+.card-ponente {
+  background: white;
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-ponente img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.card-ponente-body {
+  padding: 28px;
+  flex: 1;
+}
+
+.card-ponente-nombre {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-bottom: 4px;
+}
+
+.card-ponente-cargo {
+  font-size: 0.88rem;
+  color: var(--color-acento);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.tag-ponente {
+  display: inline-block;
+  background: #f0e8f8;
+  color: var(--color-primario);
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin: 3px;
+  font-weight: 500;
+}
+
+/* === GALERÍA === */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.galeria-item {
+  border-radius: var(--radio);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.06);
+}
+
+.galeria-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,22,84,0.75) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.galeria-item:hover .galeria-overlay {
+  opacity: 1;
+}
+
+.galeria-overlay span {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* === TARJETAS DE TEMA === */
+.card-tema {
+  background: white;
+  border-radius: var(--radio);
+  padding: 28px;
+  box-shadow: var(--sombra);
+  border-left: 4px solid var(--color-acento);
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-tema:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(44,22,84,0.18);
+}
+
+.card-tema-icono {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.card-tema h4 {
+  font-size: 1.15rem;
+  color: var(--color-primario);
+  margin-bottom: 10px;
+}
+
+.card-tema p {
+  font-size: 0.93rem;
+  color: var(--color-gris);
+}
+
+/* === CITAS DESTACADAS === */
+.cita-destacada {
+  background: white;
+  border-radius: var(--radio);
+  padding: 36px 40px;
+  box-shadow: var(--sombra);
+  border-top: 4px solid var(--color-dorado);
+  position: relative;
+  margin: 40px 0;
+}
+
+.cita-destacada::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  font-family: var(--fuente-titulo);
+  font-size: 6rem;
+  color: var(--color-dorado);
+  line-height: 1;
+  opacity: 0.3;
+}
+
+.cita-destacada blockquote {
+  font-family: var(--fuente-titulo);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-primario);
+  border: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.cita-autor {
+  font-size: 0.88rem;
+  color: var(--color-gris);
+  font-weight: 500;
+}
+
+/* === PALETA DE COLORES === */
+.paleta-colores {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.swatch:hover {
+  transform: scale(1.15);
+}
+
+.swatch-label {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  color: var(--color-gris);
+  white-space: nowrap;
+}
+
+/* === REFLEXIÓN / CONCLUSIÓN === */
+.card-reflexion {
+  background: linear-gradient(135deg, #2C1654, #5B2C8D);
+  border-radius: var(--radio);
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-reflexion::after {
+  content: '◉';
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  font-size: 8rem;
+  opacity: 0.06;
+  color: white;
+}
+
+.card-reflexion h3 {
+  color: var(--color-dorado);
+  margin-bottom: 16px;
+}
+
+.card-reflexion p {
+  opacity: 0.9;
+  font-size: 0.97rem;
+}
+
+/* === DATOS EVENTO === */
+.dato-evento {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dato-evento:last-child {
+  border-bottom: none;
+}
+
+.dato-icono {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.dato-evento strong {
+  color: var(--color-dorado);
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dato-evento span {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* === NAVBAR === */
+.navbar-informe {
+  background: var(--color-primario) !important;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.navbar-informe .navbar-brand {
+  font-family: var(--fuente-titulo);
+  color: var(--color-dorado) !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.navbar-informe .nav-link {
+  color: rgba(255,255,255,0.8) !important;
+  font-size: 0.9rem;
+  padding: 6px 14px !important;
+  transition: color 0.2s;
+}
+
+.navbar-informe .nav-link:hover {
+  color: var(--color-dorado) !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.3) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* === FOOTER === */
+footer {
+  background: #110D1C;
+  color: rgba(255,255,255,0.7);
+  padding: 40px 0 24px;
+}
+
+footer .footer-titulo {
+  font-family: var(--fuente-titulo);
+  color: var(--color-dorado);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+footer hr {
+  border-color: rgba(255,255,255,0.1);
+  margin: 24px 0 16px;
+}
+
+footer .footer-copy {
+  font-size: 0.82rem;
+  opacity: 0.5;
+}
+
+/* === BADGE PERSONALIZADO === */
+.badge-custom {
+  background: var(--color-acento);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .seccion {
+    padding: 56px 0;
+  }
+
+  .hero {
+    padding: 72px 0 56px;
+  }
+
+  .cita-destacada {
+    padding: 28px 24px;
+  }
+
+  .card-reflexion {
+    padding: 28px 24px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+/* === ANIMACIONES SUAVES === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-delay-1 { animation-delay: 0.1s; }
+.fade-delay-2 { animation-delay: 0.2s; }
+.fade-delay-3 { animation-delay: 0.3s; }
